@@ -1,0 +1,45 @@
+{% block content %}
+
+<style>
+    .button {
+      background-color: #800000;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 32px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition-duration: 0.4s;
+    }
+
+    .button:hover {
+        background-color: white; /* Green */
+        color: black;
+}
+    </style>
+
+
+
+
+<h1>Homepage</h1>
+
+
+<!-- <h1><a href="signup">Create a new workout</a> </h1>
+
+    <h2><a href="retrieve">Retrieve an old workout</a> </h2>
+
+ <a href="signup"><button>Meow</button></a> 
+https://www.w3schools.com/css/css3_buttons.asp
+
+-->
+
+<a href="signup" class="button">Create a new workout</a>
+<a href="retrieve" class="button">Retrieve an old workout</a>
+
+
+
+{% endblock %}

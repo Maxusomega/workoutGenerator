@@ -1,0 +1,108 @@
+Matthew Cole
+3/13/21
+Psuedo code
+
+workout node:
+    self.wk = []
+    self.score = 0
+
+    self.push = False
+    self.pull = False
+    self.squat = False
+    self.hinge = False
+    self.carry = False
+
+
+    addEx(self, exercise):
+        self.wk.append(exercise)
+        self.score += get score from exercise name
+
+        switch (exercise.getType) {
+            case "push":  self.push = True;
+                     break;
+            case "pull":  self.pull = True;
+                     break;
+            case "squat":  self.squat = True;
+                     break;
+            case "hinge":  self.hinge = True;
+                     break;
+            case "carry":  self.carry = True;
+                     break;
+        }
+
+workoutGen(self,sport,type):
+
+    createWkOutline():
+        mainEx = SELECT * FROM exercises WHERE type = "main"
+        auxEx = SELECT * FROM exercises WHERE type = "aux"
+        injEx = SELECT * FROM exercises WHERE type = "main" AND sport = "swim"
+
+        stack = stack
+
+        w = workout()
+
+        stack.push(w)
+
+        nextType = "aux"
+
+        while(True):
+            curr = stack.peak()
+
+            if(stack.isempty()):
+                print("no workout could be found")
+                return
+                #shouldn't ever trigger
+
+            #satisfies contraints
+            if(curr.score == 16,17,18 and len(curr.wk >= 9)):
+                return curr
+            
+            #violaites contraints
+            if(curr.score > 18):    
+                stack.pop()
+                continue
+
+            if(curr.push == False):
+                curr.addEx(get push exercise from db)
+                stack.push(curr)
+                continue
+
+            if(curr.pull == False):
+                curr.addEx(get pull exercise from db)
+                stack.push(curr)
+                continue
+
+            if(curr.squat == False):
+                curr.addEx(get squat exercise from db)
+                stack.push(curr)
+                continue
+
+            if(curr.hinge == False):
+                curr.addEx(get hinge exercise from db)
+                stack.push(curr)
+                continue
+
+            if(curr.carry == False):
+                curr.addEx(get carry exercise from db)
+                stack.push(curr)
+                continue
+
+            curr.addEx(get nextType from db)
+            stack.push(curr)
+            nextType = "injEx"
+
+    formatter(workoutList):
+
+        wk1 = []
+        wk2 = []
+
+        ind = 1
+        for ex in workoutList:
+            if ind == 1:
+                wk1.append(ex)
+                ind = 2
+            else:
+                wk2.append(ex)
+                ind = 1
+
+        return(wk1,wk2)

@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 50%;
+  border: 1px solid #ddd;
+}
+
+th, td, tr {
+  text-align: center;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #800000;
+  color: whitesmoke;
+}
+
+</style>
+
+<h1> {{fName}} {{lName}}'s workout </h1>
+<h2>Email: {{email}}</h2>
+
+
+<table border="1">
+    
+    </tr>
+        <h2>Workout 1</h2>
+    </tr>
+
+    <tr>
+        <th>
+            <h3>Exercise</h3>
+        </th>
+        <th>
+            <h3>Exercise Type</h3>
+        </th>
+        <th>
+            <h3>Equipment Needed</h3>
+        </th>
+        <th>
+            <h3>Rep Range</h3>
+        </th>
+
+    </tr>
+
+    <tr>
+        {% for ex in wk1 %}
+
+        <th>
+            {{ex[0]}}
+        </th>
+        <th>
+            {{ex[1]}}
+        </th>
+        <th>
+            {{ex[3]}}
+        </th>
+        <th>
+            {{ex[5]}}
+        </th>
+    </tr>
+
+    {% endfor %}
+
+</table>
+<!-- Seperator --> 
+<table border="1">
+    
+</tr>
+    <h2>Workout 2</h2>
+</tr>
+
+<tr>
+    <th>
+        <h3>Exercise</h3>
+    </th>
+    <th>
+        <h3>Exercise Type</h3>
+    </th>
+    <th>
+        <h3>Equipment Needed</h3>
+    </th>
+    <th>
+        <h3>Rep Range</h3>
+    </th>
+
+</tr>
+
+<tr>
+    {% for ex in wk2 %}
+
+    <th>
+        {{ex[0]}}
+    </th>
+    <th>
+        {{ex[1]}}
+    </th>
+    <th>
+        {{ex[3]}}
+    </th>
+    <th>
+        {{ex[5]}}
+    </th>
+</tr>
+
+{% endfor %}
+
+</table>
+
+
+{% endblock %}
